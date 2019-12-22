@@ -26,8 +26,7 @@ class FilterWindow:
 									font = "Arial 8",
 									command = self.filterList)
 
-		self.declineButn = Button(self.root, text = "Decline")
-		self.declineButn.bind('<Button-1>', lambda x = None: self.decline())
+		self.declineButn = Button(self.root, text = "Decline", command = self.decline)
 
 		self.date.pack()
 		self.date.insert(END, "Date (formatted 'DD.MM.YYYY')")
@@ -65,5 +64,5 @@ class FilterWindow:
 		OpenedWindows.filterW = 0
 		self.root.destroy()
 
-	def disable_event():
+	def disable_event(self):
 		pass

@@ -87,7 +87,8 @@ class MainWindow:
 			self.showAllRecs()
 	
 	def delRec(self):
-			a = self.lbox.curselection()
+		a = self.lbox.curselection()
+		if(len(a) > 0):
 			self.linkedList[0].Del(a[0])
 			self.showAllRecs()
 	

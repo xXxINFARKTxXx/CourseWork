@@ -20,18 +20,16 @@ class AddRecWindow:
 				self.etList[i].pack()
 		
 		self.butnList = []
-		self.butnList.append(Button(self.root, text = "Add"))
-		self.butnList[0].bind('<Button-1>', lambda list = self.linkedList: self.saveToList(self.linkedList))
+		self.butnList.append(Button(self.root, text = "Add", command = self.saveToList))
 		
-		self.butnList.append(Button(self.root, text = "Decline"))
-		self.butnList[1].bind('<Button-1>', lambda x = None: self.decline())
+		self.butnList.append(Button(self.root, text = "Decline", command = self.decline))
 		
 		for i in range(2):
 				self.butnList[i].pack(side = LEFT)
 				
 		self.root.mainloop()
 		
-	def saveToList(self, linkedList):
+	def saveToList(self):
 		currValue = Record( self.etList[0].get(),
 							self.etList[1].get(),
 							self.etList[2].get(),
@@ -60,5 +58,5 @@ class AddRecWindow:
 		OpenedWindows.addRecW = 0
 		self.root.destroy()
 	
-	def disable_event():
+	def disable_event(self):
 		pass
