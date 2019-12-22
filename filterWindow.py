@@ -11,6 +11,7 @@ class FilterWindow:
 		self.root = Tk()
 		self.root.geometry("300x70+1350+340")
 		self.root.title("Filter")
+		self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
 
 		self.f_top = Frame(self.root)
 		self.f_bot = Frame(self.root)
@@ -63,3 +64,6 @@ class FilterWindow:
 	def decline(self):
 		OpenedWindows.filterW = 0
 		self.root.destroy()
+
+	def disable_event():
+		pass

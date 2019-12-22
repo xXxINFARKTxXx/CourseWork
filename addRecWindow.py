@@ -10,6 +10,7 @@ class AddRecWindow:
 		self.root = Tk()
 		self.root.geometry("300x100+1350+200")
 		self.root.title("Adding Record")
+		self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
 		
 		self.etList = []
 		a = ["Destination", "Flight Number", "Name", "Date (formatted 'DD.MM.YYYY')"]
@@ -58,3 +59,6 @@ class AddRecWindow:
 	def decline(self):
 		OpenedWindows.addRecW = 0
 		self.root.destroy()
+	
+	def disable_event():
+		pass
