@@ -1,1 +1,3 @@
 # CourseWork
+
+Запускай mainWindow.py
