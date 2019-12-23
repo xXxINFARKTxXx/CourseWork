@@ -20,8 +20,7 @@ class AddRecWindow:
 				self.etList[i].pack()
 		
 		self.butnList = []
-		self.butnList.append(Button(self.root, text = "Add", command = self.saveToList))
-		
+		self.butnList.append(Button(self.root, text = "Add", command = self.saveToList))	
 		self.butnList.append(Button(self.root, text = "Decline", command = self.decline))
 		
 		for i in range(2):
@@ -59,4 +58,5 @@ class AddRecWindow:
 		self.root.destroy()
 	
 	def disable_event(self):
-		pass
+		OpenedWindows.addRecW = 0
+		self.root.destroy()

@@ -12,6 +12,7 @@ class MainWindow:
 		self.root = Tk()
 		self.root.geometry("750x560+600+200")
 		self.root.title("Coursework")
+		self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
 
 			#FRAMES
 		self.f_left = Frame(self.root, bd = 3, background = "lightgreen", relief = RIDGE)
@@ -105,6 +106,9 @@ class MainWindow:
 	def cleanRecs(self):
 			self.linkedList[0].clear()
 			self.showAllRecs()
+
+	def disable_event(self):
+		self.root.quit()
 		
 if __name__ == "__main__":
 	MainWindow()

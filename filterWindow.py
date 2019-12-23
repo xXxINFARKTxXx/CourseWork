@@ -65,4 +65,5 @@ class FilterWindow:
 		self.root.destroy()
 
 	def disable_event(self):
-		pass
+		OpenedWindows.filterW = 0
+		self.root.destroy()
