@@ -8,17 +8,17 @@ class AddRecWindow:
 		self.linkedList = linkedList
 
 		self.root = Tk()
-		self.root.geometry("300x100+1350+200")
+		self.root.geometry("250x100+1110+200")
 		self.root.title("Adding Record")
 		self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
+		self.root.resizable(width=False, height=False)
 		
-		self.etList = []
+		self.etList = [Entry(self.root, width = 40) for i in range(4)]
 		a = ["Destination", "Flight Number", "Name", "Date (formatted 'DD.MM.YYYY')"]
 		for i in range(4):
-				self.etList.append(Entry(self.root, width = 40))
 				self.etList[i].insert(END, a[i])
 				self.etList[i].pack()
-				self.etList[i].bind("<Button-1>", self.cleanHints)
+				self.etList[i].bind("<Button-1>", lambda a = None, ind = i: self.etList[ind].delete(0, END))
 		
 		self.butnList = []
 		self.butnList.append(Button(self.root, text = "Add", command = self.saveToList))	

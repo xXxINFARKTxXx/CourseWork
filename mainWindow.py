@@ -10,9 +10,10 @@ class MainWindow:
 		self.linkedList = [LinkedList()]
 
 		self.root = Tk()
-		self.root.geometry("750x560+600+200")
+		self.root.geometry("710x530+400+200")
 		self.root.title("Coursework")
 		self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
+		self.root.resizable(width=False, height=False)
 
 			#FRAMES
 		self.f_left = Frame(self.root, bd = 3, background = "lightgreen", relief = RIDGE)
@@ -63,7 +64,7 @@ class MainWindow:
 						font = "Arial 15")
 
 		self.f_left.pack(side = LEFT)
-		self.f_right.pack(side = RIGHT)
+		self.f_right.pack(side = LEFT)
 		
 		
 		self.addRecButn.pack()

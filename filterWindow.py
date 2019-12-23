@@ -9,19 +9,19 @@ class FilterWindow:
 		self.lboxlist = lboxlist
 
 		self.root = Tk()
-		self.root.geometry("300x70+1350+340")
+		self.root.geometry("250x70+1110+340")
 		self.root.title("Filter")
 		self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
+		self.root.resizable(width=False, height=False)
 
 		self.f_top = Frame(self.root)
 		self.f_bot = Frame(self.root)
 
 		self.date = Entry(self.root, width = 40)
-		self.date.bind("<Button-1>", self.cleanHints)
+		self.date.bind("<Button-1>", lambda a = None : self.date.delete(0, END))
 
 		self.flighNum = Entry(self.root, width = 40)
-		entry = self.flighNum
-		self.flighNum.bind("<Button-1>", self.cleanHints)
+		self.flighNum.bind("<Button-1>", lambda a = None : self.flighNum.delete(0, END))
 
 		self.fillterButn = Button(self.root,
 									text = "Filter List",
@@ -73,10 +73,6 @@ class FilterWindow:
 
 			OpenedWindows.filterW = 0
 			self.root.destroy()
-	
-	def cleanHints(self, Event):
-		self.date.delete(0, END)
-		self.flighNum.delete(0, END)
 
 	def disable_event(self):
 		OpenedWindows.filterW = 0
