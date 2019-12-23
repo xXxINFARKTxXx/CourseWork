@@ -26,14 +26,11 @@ class FilterWindow:
 									font = "Arial 8",
 									command = self.filterList)
 
-		self.declineButn = Button(self.root, text = "Decline", command = self.decline)
-
 		self.date.pack()
 		self.date.insert(END, "Date (formatted 'DD.MM.YYYY')")
 		self.flighNum.pack()
 		self.flighNum.insert(END, "Flight Number")
 		self.fillterButn.pack(side = LEFT)
-		self.declineButn.pack(side = LEFT)
 
 		self.root.mainloop
 

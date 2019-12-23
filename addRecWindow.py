@@ -21,10 +21,8 @@ class AddRecWindow:
 		
 		self.butnList = []
 		self.butnList.append(Button(self.root, text = "Add", command = self.saveToList))	
-		self.butnList.append(Button(self.root, text = "Decline", command = self.decline))
 		
-		for i in range(2):
-				self.butnList[i].pack(side = LEFT)
+		self.butnList[0].pack(side = LEFT)
 				
 		self.root.mainloop()
 		
