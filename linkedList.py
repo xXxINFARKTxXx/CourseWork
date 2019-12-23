@@ -7,14 +7,11 @@ class Node:
 		self.next = next
 
 class LinkedList:
-
-	allLists = []
 	
 	def __init__(self):
 		self.first = None
 		self.last = None
 		self.length = 0
-		LinkedList.allLists.append(self)
 
 	def __str__(self):
 		if self.first != None:

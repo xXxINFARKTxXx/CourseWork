@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 from openedWindows import *
-from addRecWindow import *
-from filterWindow import *
+from addRecWindow import AddRecWindow
+from filterWindow import FilterWindow
 
 class MainWindow:
 
@@ -25,7 +25,6 @@ class MainWindow:
 						height = 5,
 						font = "Arial 12",
 						command = self.addRec)
-		#self.addRecButn.bind('<Button-1>', lambda : self.addRec(self))
 
 		self.delButnButn = Button(self.f_left,
 						text = "Delete\n chosed\n record",
@@ -108,7 +107,7 @@ class MainWindow:
 			self.showAllRecs()
 
 	def disable_event(self):
-		self.root.quit()
+		self.root.destroy()
 		
 if __name__ == "__main__":
 	MainWindow()

@@ -18,6 +18,7 @@ class AddRecWindow:
 				self.etList.append(Entry(self.root, width = 40))
 				self.etList[i].insert(END, a[i])
 				self.etList[i].pack()
+				self.etList[i].bind("<Button-1>", self.cleanHints)
 		
 		self.butnList = []
 		self.butnList.append(Button(self.root, text = "Add", command = self.saveToList))	
@@ -54,6 +55,10 @@ class AddRecWindow:
 	def decline(self):
 		OpenedWindows.addRecW = 0
 		self.root.destroy()
+
+	def cleanHints(self, Event):
+		for i in self.etList:
+			i.delete(0, END)
 	
 	def disable_event(self):
 		OpenedWindows.addRecW = 0
