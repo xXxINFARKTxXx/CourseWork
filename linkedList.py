@@ -13,6 +13,7 @@ class LinkedList:
 		self.last = None
 		self.length = 0
 
+		# вывод списка в виде строки
 	def __str__(self):
 		if self.first != None:
 			current = self.first
@@ -23,9 +24,11 @@ class LinkedList:
 			return out + ']'
 		return 'LinkedList []'
 
+		# очищение списка
 	def clear(self):
 		self.__init__()
 
+		# добавление узла в конец списка 
 	def add(self, x):
 		self.length+=1
 		if self.first == None:
@@ -35,6 +38,7 @@ class LinkedList:
 			#здесь, уже на разные, т.к. произошло присваивание
 			self.last.next = self.last = Node(x, None)
 
+		# добавление узла в начало списка
 	def push(self, x):
 		self.length+=1
 		if self.first == None:
@@ -42,6 +46,7 @@ class LinkedList:
 		else:
 			self.first = Node(x,self.first)
 
+		# вставка узла на выбранную позицию
 	def insertNth(self,i,x):
 		if self.first == None:
 			self.last = self.first = Node(x, None)
@@ -61,6 +66,7 @@ class LinkedList:
 			curr = curr.next
 		return
 	
+		# удаление узла по нужному ключу
 	def Del(self, i):
 		if (self.first == None):
 			return
@@ -82,6 +88,7 @@ class LinkedList:
 			count += 1
 		self.length -= 1
 
+		# доступ к значению узла по индексу
 	def __getitem__(self, key):#поддержка обращения по ключу
 		length =0
 		current=None
@@ -95,6 +102,7 @@ class LinkedList:
 			if key==length: current=current.value
 		return current
 
+		# изменения значения узла по индексу
 	def __setitem__(self, key, value):#поддержка изменения значения по ключу
 		length = 0
 		if self.first != None:

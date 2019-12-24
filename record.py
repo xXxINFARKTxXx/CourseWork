@@ -9,12 +9,13 @@ class Record:
 		self.destination = d
 		self.flightNum = f
 		self.name = n
-		self.date = dt ## Шаблон даты DD.MM.YYYY
+		self.date = dt ## Шаблон даты строка "DD.MM.YYYY"
 
 	def __str__(self):
 		out = str(self.destination)+", "+str(self.flightNum)+", "+str(self.name)+", "+str(self.date)
 		return out
 
+		# проверка записи на валидность
 	def isValid(self):
 
 		if len(self.date) != 10:
