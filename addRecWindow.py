@@ -7,25 +7,21 @@ class AddRecWindow:
 		self.lboxlist = lboxlist
 		self.linkedList = linkedList
 
-		## создание и размещение главного окна
 		self.root = Tk()
 		self.root.geometry("250x100+1110+200")
-		self.root.title("Adding Record")
+		self.root.title("Добавление записи")
 		self.root.protocol("WM_DELETE_WINDOW", self.disable_event)
 		self.root.resizable(width=False, height=False)
 		
-		## создание, размещение и назначение полей ввода
 		self.etList = [Entry(self.root, width = 40) for i in range(4)]
-		a = ["Destination", "Flight Number", "Name", "Date (formatted 'DD.MM.YYYY')"]
+		a = ["Пункт назначения", "Рейс №", "Фамилия Имя Отчество", "Дата (Формат 'ДД.ММ.ГГГГ')"]
 		for i in range(4):
 				self.etList[i].insert(END, a[i])
 				self.etList[i].pack()
 				self.etList[i].bind("<Button-1>", lambda a = None, ind = i: self.etList[ind].delete(0, END))
 		
-		
-			## создание, размещение и назначение кнопки добавления
 		self.butnList = []
-		self.butnList.append(Button(self.root, text = "Add", command = self.saveToList))	
+		self.butnList.append(Button(self.root, text = "Добавить", command = self.saveToList))	
 		
 		self.butnList[0].pack(side = LEFT)
 				
@@ -40,12 +36,12 @@ class AddRecWindow:
 			len(currValue.destination) == 0 or
 			len(currValue.flightNum) == 0 or
 			len(currValue.name) == 0 ):
-			mb.showerror(title="ERROR",
-						message="     You need to fill all fields!     ")
+			mb.showerror(title="ОШИБКА",
+						message="     Необходимо заполнить все поля!     ")
 
 		elif currValue.isValid() == False:
-			mb.showerror(title="ERROR",
-						message="          Wrong date format!          ")
+			mb.showerror(title="ОШИБКА",
+						message="          Неправильный формат записи даты!          ")
 		else :
 			self.linkedList[0].add(currValue)
 			
